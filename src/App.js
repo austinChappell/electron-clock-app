@@ -7,6 +7,7 @@ import Time from './components/Time';
 import AnalogClock from './components/AnalogClock';
 import DigitalClock from './components/DigitalClock';
 import Switch from './components/Switch';
+import AlarmEditor from './components/AlarmEditor.js';
 
 // Local Variables
 const ClockWrapper = styled.div`
@@ -24,6 +25,8 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <AlarmEditor />
+
         <Switch
           offText="Analog"
           onChange={toggleClock}
