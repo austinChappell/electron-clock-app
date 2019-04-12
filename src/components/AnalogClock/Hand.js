@@ -36,13 +36,16 @@ function getRotationFromHandType(handType, secondsIntoDay) {
 }
 
 // Component Definition
-const Hand = styled.div`
+const Hand = styled.div.attrs(props => ({
+  style: {
+    transform: `rotate(${getRotationFromHandType(props.handType, props.secondsIntoDay)}deg)`
+  }
+}))`
   background-color: white;
   bottom: 50%;
   height: ${props => handLengthPercentOfRadius[props.handType] * props.radius}px;
   left: 50%;
   transform-origin: bottom;
-  transform: rotate(${props => getRotationFromHandType(props.handType, props.secondsIntoDay)}deg);
   position: absolute;
   width: ${props => handWidths[props.handType]}px;
 `;
