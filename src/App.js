@@ -5,7 +5,9 @@ import './App.css';
 import Time from './components/Time';
 import AnalogClock from './components/AnalogClock';
 import DigitalClock from './components/DigitalClock';
+import Switch from './components/Switch';
 
+// Component Definition
 const App = () => {
   const [isDigital, setIsDigital] = useState(false);
 
@@ -16,18 +18,23 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={toggleClock}>
-          {isDigital ? 'Analog' : 'Digital'}
-        </button>
-        <Time>
-          {({ timeData }) => (
-            isDigital ? (
-              <DigitalClock timeData={timeData} />
-            ) : (
-              <AnalogClock timeData={timeData} />
-            )
-          )}
-        </Time>
+        <Switch
+          offText="Analog"
+          onChange={toggleClock}
+          on={isDigital}
+          onText="Digital"
+        />
+        <div style={{ height: 400 }}>
+          <Time>
+            {({ timeData }) => (
+              isDigital ? (
+                <DigitalClock timeData={timeData} />
+              ) : (
+                <AnalogClock timeData={timeData} />
+              )
+            )}
+          </Time>
+        </div>
       </header>
 
     </div>

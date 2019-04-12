@@ -1,6 +1,7 @@
 // External Dependencies
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Switch from './Switch';
 
 // Local Variables
 const propTypes = {
@@ -46,11 +47,12 @@ const DigitalClock = ({
     <div>
       {isMilitaryTime ? displayMilitaryTime(timeData) : displayTime(timeData)}
 
-      <div>
-        <button onClick={toggleDisplay}>
-          {isMilitaryTime ? '12hr' : '24hr'}
-        </button>
-      </div>
+      <Switch
+        offText="12hr"
+        onChange={toggleDisplay}
+        on={isMilitaryTime}
+        onText="24hr"
+      />
     </div>
   )
 }
