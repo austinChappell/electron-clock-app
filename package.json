@@ -7,10 +7,11 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
-    "dev" : "nf start",
+    "dev": "nf start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -29,6 +30,7 @@
   ],
   "devDependencies": {
     "electron": "^4.1.4",
-    "foreman": "^3.0.1"
+    "foreman": "^3.0.1",
+    "prop-types": "^15.7.2"
   }
 }

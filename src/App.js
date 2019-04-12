@@ -1,23 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+
+// Internal Dependencies
 import './App.css';
 import Time from './components/Time';
+import AnalogClock from './components/AnalogClock';
 import DigitalClock from './components/DigitalClock';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <Time>
-            {({ timeData }) => (
-              <DigitalClock timeData={timeData} />
-            )}
-          </Time>
-        </header>
+const App = () => {
+  const [isDigital, setIsDigital] = useState(false);
 
-      </div>
-    );
+  function toggleClock() {
+    setIsDigital(!isDigital)
   }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <button onClick={toggleClock}>
+          {isDigital ? 'Analog' : 'Digital'}
+        </button>
+        <Time>
+          {({ timeData }) => (
+            isDigital ? (
+              <DigitalClock timeData={timeData} />
+            ) : (
+              <AnalogClock timeData={timeData} />
+            )
+          )}
+        </Time>
+      </header>
+
+    </div>
+  );
 }
 
 export default App;

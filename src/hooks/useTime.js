@@ -34,12 +34,17 @@ export function getTime() {
     period,
   } = convertMilitaryHours(hours);
 
+  const hoursInSeconds = hours * 3600;
+  const minutesInSeconds = minutes * 60;
+  const secondsIntoCurrentDay = hoursInSeconds + minutesInSeconds + seconds;
+
   return {
     civilianHour: padItUp(civilianHour),
     hours: padItUp(hours),
     minutes: padItUp(minutes),
     period,
     seconds: padItUp(seconds),
+    secondsIntoCurrentDay,
   };
 }
 

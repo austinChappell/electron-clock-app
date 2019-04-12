@@ -1,7 +1,19 @@
 // External Dependencies
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Local Variables
+const propTypes = {
+  timeData: PropTypes.shape({
+    civilianHour: PropTypes.string.isRequired,
+    hours: PropTypes.string.isRequired,
+    minutes: PropTypes.string.isRequired,
+    period: PropTypes.string.isRequired,
+    seconds: PropTypes.string.isRequired,
+    secondsIntoCurrentDay: PropTypes.number.isRequired,
+  }).isRequired,
+}
+
 function displayTime({
   civilianHour,
   minutes,
@@ -42,5 +54,7 @@ const DigitalClock = ({
     </div>
   )
 }
+
+DigitalClock.propTypes = propTypes;
 
 export default DigitalClock;
