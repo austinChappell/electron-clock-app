@@ -17,6 +17,14 @@ const propTypes = {
     secondsIntoCurrentDay: PropTypes.number.isRequired,
   }).isRequired,
 }
+const ClockContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+  padding-top: 50px;
+`;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -53,16 +61,16 @@ const DigitalClock = ({
 
   return (
     <div>
-      {isMilitaryTime ? displayMilitaryTime(timeData) : displayTime(timeData)}
+      <ClockContainer>
+        {isMilitaryTime ? displayMilitaryTime(timeData) : displayTime(timeData)}
 
-      <Wrapper>
         <Switch
           offText="12hr"
           onChange={toggleDisplay}
           on={isMilitaryTime}
           onText="24hr"
         />
-      </Wrapper>
+      </ClockContainer>
     </div>
   )
 }
