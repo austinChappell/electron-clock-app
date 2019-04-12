@@ -25,11 +25,6 @@ const ClockContainer = styled.div`
   height: 300px;
   padding-top: 50px;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-`;
 
 function displayTime({
   civilianHour,
