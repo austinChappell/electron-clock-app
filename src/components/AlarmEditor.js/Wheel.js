@@ -52,10 +52,14 @@ const Option = styled.li`
 const Wheel = (props) => {
   const [selection, setSelection] = useState(props.value);
 
+  function handleScroll(evt) {
+    console.log('scrolling', evt.target)
+  }
+
   return (
     <Container>
       <Inner>
-        <Center>
+        <Center onScroll={handleScroll}>
           {props.options.map(option => (
             <Option key={option}>
               {option}
