@@ -14,9 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(50px + 2vmin);
+  justify-content: flex-start;
+  font-size: calc(50px + 3vmin);
   color: white;
+  padding-top: 20vh;
 }
 
 .App-link {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 // Internal Dependencies
 import './App.css';
@@ -6,6 +7,11 @@ import Time from './components/Time';
 import AnalogClock from './components/AnalogClock';
 import DigitalClock from './components/DigitalClock';
 import Switch from './components/Switch';
+
+// Local Variables
+const ClockWrapper = styled.div`
+  padding: 50px 20px;
+`;
 
 // Component Definition
 const App = () => {
@@ -24,7 +30,8 @@ const App = () => {
           on={isDigital}
           onText="Digital"
         />
-        <div style={{ height: 400 }}>
+
+        <ClockWrapper>
           <Time>
             {({ timeData }) => (
               isDigital ? (
@@ -34,7 +41,7 @@ const App = () => {
               )
             )}
           </Time>
-        </div>
+        </ClockWrapper>
       </header>
 
     </div>

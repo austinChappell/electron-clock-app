@@ -1,6 +1,9 @@
 // External Dependencies
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+// Internal Dependencies
 import Switch from './Switch';
 
 // Local Variables
@@ -14,6 +17,11 @@ const propTypes = {
     secondsIntoCurrentDay: PropTypes.number.isRequired,
   }).isRequired,
 }
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+`;
 
 function displayTime({
   civilianHour,
@@ -47,12 +55,14 @@ const DigitalClock = ({
     <div>
       {isMilitaryTime ? displayMilitaryTime(timeData) : displayTime(timeData)}
 
-      <Switch
-        offText="12hr"
-        onChange={toggleDisplay}
-        on={isMilitaryTime}
-        onText="24hr"
-      />
+      <Wrapper>
+        <Switch
+          offText="12hr"
+          onChange={toggleDisplay}
+          on={isMilitaryTime}
+          onText="24hr"
+        />
+      </Wrapper>
     </div>
   )
 }
