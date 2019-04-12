@@ -29,7 +29,7 @@ const Inner = styled.div`
 `;
 const Center = styled.ul`
   box-sizing: content-box;
-  height: 20px;
+  height: 30px;
   overflow-y: scroll;
   padding-right: 17px;
   padding: 20px 0;
